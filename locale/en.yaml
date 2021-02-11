@@ -25,11 +25,9 @@ uwave:
 
   roles:
     user: Clubber
-    rdj: Resident DJ
-    special: Special
+    special: Resident DJ
     moderator: Bouncer
     manager: Manager
-    cohost: Co-Host
     admin: Host
 
   chat:
