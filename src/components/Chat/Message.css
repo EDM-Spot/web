@@ -1,8 +1,12 @@
 /* Message styles are still super hacky...
  * One day! */
 .ChatMessage {
-  min-height: 32px;
   position: relative;
+  clear: left;
+  min-height: 46px;
+  width: 100%;
+  word-wrap: break-word;
+
   -webkit-animation: fadein 1s;
   -moz-animation: fadein 1s;
   -ms-animation: fadein 1s;
@@ -40,22 +44,26 @@
 }
 
 .ChatMessage-avatar {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  top: 0;
-  inset-inline-start: 12px;
-  margin: 4px 0;
+  position: relative;
+  z-index: 1;
+  float: left;
+  overflow: hidden;
+  margin: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+}
+
+.ChatMessage-avatar:hover{
+  width: 65px;
+  height: 65px;
+  transition: 0.4s;
 }
 
 .ChatMessage-content {
   position: relative;
-  padding-inline-start: 50px;
-  padding-inline-end: 3px;
+  padding: 16px 0px 0px 46px;
   width: 100%;
-  display: inline-block;
-  margin: 6px 0;
-  word-wrap: break-word;
 }
 
 .ChatMessage-cardable {
