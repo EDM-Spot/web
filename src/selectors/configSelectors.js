@@ -64,9 +64,9 @@ export const roleSelector = memoizePermanently((roleName) => createSelector(
 
 // TODO make this configurable.
 export const roleColorsSelector = () => ({
-  admin: '#ff3b74',
-  manager: '#05daa5',
-  moderator: '#00b3dc',
-  special: '#fc911d',
+  admin: '#f1c40f',
+  manager: '#cc3333',
+  moderator: '#9b40e7',
+  special: '#33ccff',
   default: '',
 });

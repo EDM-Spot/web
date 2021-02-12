@@ -3,10 +3,16 @@
 .ChatMessage {
   min-height: 32px;
   position: relative;
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -ms-animation: fadein 1s;
+  -o-animation: fadein 1s;
+  animation: fadein 1s;
 }
 
 .ChatMessage--mention {
   box-shadow: 5px 0 0 var(--highlight-color) inset;
+  background: linear-gradient(135deg,rgb(5, 34, 113) 0%,rgba(19, 67, 138, 0.58) 13%,rgb(0, 0, 0) 100%) !important;
 }
 
 .ChatMessage-hover {
@@ -72,4 +78,34 @@
 
 .ChatMention {
   color: var(--highlight-color);
+}
+
+@keyframes fadein
+{
+    from { opacity: 0; };
+    to { opacity: 1; };
+}
+
+@-moz-keyframes fadein
+{
+    from { opacity: 0; };
+    to { opacity: 1; };
+}
+
+@-webkit-keyframes fadein
+{
+    from { opacity: 0; };
+    to { opacity: 1; };
+}
+
+@-ms-keyframes fadein
+{
+    from { opacity: 0; };
+    to { opacity: 1; };
+}
+
+@-o-keyframes fadein
+{
+    from { opacity: 0; };
+    to { opacity: 1; };
 }

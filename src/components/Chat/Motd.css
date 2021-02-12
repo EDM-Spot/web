@@ -1,7 +1,13 @@
 .ChatMessage--motd {
+  color: #27b2e9;
+  border-top: #27b2e9 2px dotted;
+  border-left: #27b2e9 2px dotted;
+  border-bottom: #27b2e9 2px dotted;
+  border-right: #27b2e9 2px dotted;
+  font-size: 23px;
+  
   & .ChatMessage-content {
     padding-left: 10px;
     white-space: pre-wrap;
-    color: #eee;
   }
 }
