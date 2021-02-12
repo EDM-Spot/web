@@ -77,7 +77,7 @@
 }
 
 .ChatMention {
-  color: var(--highlight-color);
+  color: #914dff;
 }
 
 @keyframes fadein
