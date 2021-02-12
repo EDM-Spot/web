@@ -24,11 +24,11 @@ uwave:
     days_plural: "{{count}} days"
 
   roles:
-    user: User
-    special: Special
-    moderator: Moderator
+    user: Clubber
+    special: Resident DJ
+    moderator: Bouncer
     manager: Manager
-    admin: Admin
+    admin: Host
 
   chat:
     title: Chat
@@ -127,12 +127,12 @@ uwave:
     leave: Leave Waitlist
 
   votes:
-    upvote: Upvote
-    downvote: Downvote
-    favorite: Favorite
+    upvote: Woot!
+    downvote: Meh
+    favorite: Grab
 
   booth:
-    empty: Nobody is playing!
+    empty: Nobody is playing :(
     videoDisabled: Video playback is disabled.
     autoplayBlocked: Your browser is blocking autoplay. Please press the button below to manually start playing this track.
     play: Play
@@ -148,7 +148,7 @@ uwave:
         unavailable: Unavailable or blocked
         nsfw: NSFW
         duration: Too long
-        downvotes: Too many downvotes
+        downvotes: Too many mehs
         other: Other
 
   history:
