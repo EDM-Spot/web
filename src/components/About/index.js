@@ -5,6 +5,7 @@ import List, { ListItem, ListItemText } from '../List';
 import OverlayHeader from '../Overlay/Header';
 import OverlayContent from '../Overlay/Content';
 import ServerList from '../ServerList';
+import RulesPanel from '../Rules';
 
 const { useState } = React;
 
@@ -14,7 +15,7 @@ function About({
   render: AboutPanel,
 }) {
   const { t } = useTranslator();
-  const [active, setActive] = useState(hasAboutPage ? 'about' : 'servers');
+  const [active, setActive] = useState(hasAboutPage ? 'about' : 'rules');
 
   return (
     <div className="About">
@@ -36,6 +37,13 @@ function About({
           )}
           <ListItem
             className="AboutPanel-menuItem"
+            selected={active === 'rules'}
+            onClick={() => setActive('rules')}
+          >
+            <ListItemText primary={t('about.rules')} />
+          </ListItem>
+          <ListItem
+            className="AboutPanel-menuItem"
             selected={active === 'servers'}
             onClick={() => setActive('servers')}
           >
@@ -44,6 +52,7 @@ function About({
         </List>
         <div className="AboutPanel-content">
           {active === 'about' && <AboutPanel />}
+          {active === 'rules' && <RulesPanel />}
           {active === 'servers' && <ServerList />}
         </div>
       </OverlayContent>

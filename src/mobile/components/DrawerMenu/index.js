@@ -66,6 +66,7 @@ function DrawerMenu({
   open,
   hasAboutPage,
   onShowAbout,
+  onShowRules,
   onShowServerList,
   onShowSettings,
   onShowPlaylist,
@@ -77,6 +78,10 @@ function DrawerMenu({
     onShowAbout();
     onDrawerClose();
   }, [onShowAbout, onDrawerClose]);
+  const handleShowRules = useCallback(() => {
+    onShowRules();
+    onDrawerClose();
+  }, [onShowRules, onDrawerClose]);
   const handleShowServerList = useCallback(() => {
     onShowServerList();
     onDrawerClose();
@@ -99,6 +104,9 @@ function DrawerMenu({
             {t('about.about')}
           </MenuItem>
         )}
+        <MenuItem onClick={handleShowRules}>
+          {t('about.rules')}
+        </MenuItem>
         <MenuItem onClick={handleShowServerList}>
           {t('about.servers')}
         </MenuItem>
@@ -126,6 +134,7 @@ DrawerMenu.propTypes = {
   open: PropTypes.bool.isRequired,
   hasAboutPage: PropTypes.bool.isRequired,
   onShowAbout: PropTypes.func.isRequired,
+  onShowRules: PropTypes.func.isRequired,
   onShowServerList: PropTypes.func.isRequired,
   onShowSettings: PropTypes.func.isRequired,
   onShowPlaylist: PropTypes.func.isRequired,

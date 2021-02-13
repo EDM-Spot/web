@@ -166,6 +166,7 @@ uwave:
 
   about:
     about: About
+    rules: Rules
     servers: Servers
 
   settings:
