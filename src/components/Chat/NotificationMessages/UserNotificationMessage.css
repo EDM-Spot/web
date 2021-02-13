@@ -5,4 +5,7 @@
   & .ChatMessage-content {
     color: #aaa;
   }
+  & .ChatMessage-username {
+    padding-top: 10px;
+  }
 }

@@ -72,7 +72,9 @@ function Message({
         >
           <Username user={user} />
         </button>
-        <span className="ChatMessage-text">{children}</span>
+        <div>
+          <span className="ChatMessage-text">{children}</span>
+        </div>
       </div>
     </div>
   );

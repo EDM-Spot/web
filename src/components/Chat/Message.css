@@ -62,7 +62,7 @@
 
 .ChatMessage-content {
   position: relative;
-  padding: 16px 0px 0px 46px;
+  padding: 6px 0px 0px 46px;
   width: 100%;
 }
 
@@ -74,10 +74,11 @@
 .ChatMessage-username {
   color: #9ba0a0;
   font-weight: 600;
+  margin-bottom: 3px;
 }
 
 .ChatMessage-text {
-  margin-inline-start: 5px;
+  margin-inline-start: 0px;
 }
 
 .ChatMessage--loading {
