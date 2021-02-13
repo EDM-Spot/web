@@ -1,5 +1,5 @@
 import { register } from '../ChatCommands';
-import { log } from '../../actions/ChatActionCreators';
+import { log, sendChat } from '../../actions/ChatActionCreators';
 import { doChangeUsername } from '../../actions/UserActionCreators';
 
 register(
@@ -12,6 +12,17 @@ register(
       }
 
       return doChangeUsername(name);
+    },
+  },
+);
+
+register(
+  'me',
+  'Say a message in the third person',
+  {
+    action: (...args) => {
+      const message = args.join(' ');
+      return sendChat(`_${message}_`, true);
     },
   },
 );
