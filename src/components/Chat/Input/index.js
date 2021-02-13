@@ -153,7 +153,7 @@ class ChatInput extends React.Component {
           onUpdate={this.handleUpdate}
           value={value}
           renderSuggestions={renderSuggestions}
-          limit={6}
+          limit={10}
         >
           <Completion
             trigger="@"
