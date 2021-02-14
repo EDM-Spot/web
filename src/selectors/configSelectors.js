@@ -67,6 +67,7 @@ export const roleColorsSelector = () => ({
   admin: '#f1c40f',
   manager: '#cc3333',
   moderator: '#9b40e7',
+  producer: '#5740d0',
   special: '#33ccff',
   default: '',
 });

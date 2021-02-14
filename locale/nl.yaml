@@ -13,6 +13,7 @@ uwave:
   roles:
     user: Gebruiker
     special: Special
+    producer: Verified Producer
     moderator: Moderator
     manager: Manager
     admin: Administrator

@@ -26,6 +26,7 @@ uwave:
   roles:
     user: Clubber
     special: Resident DJ
+    producer: Verified Producer
     moderator: Bouncer
     manager: Manager
     admin: Host
