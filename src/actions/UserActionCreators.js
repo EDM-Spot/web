@@ -3,6 +3,7 @@ import {
   LOAD_ONLINE_USERS,
   USER_JOIN,
   USER_LEAVE,
+  USER_PLAY,
   CHANGE_USERNAME,
   USER_ADD_ROLES,
   USER_REMOVE_ROLES,
@@ -52,6 +53,17 @@ export function leave(id) {
         timestamp: Date.now(),
       },
     });
+  };
+}
+
+export function play(user, song) {
+  return {
+    type: USER_PLAY,
+    payload: {
+      user,
+      song,
+      timestamp: Date.now(),
+    },
   };
 }
 

@@ -3,6 +3,7 @@ import {
   USER_JOIN,
   USER_LEAVE,
   CHANGE_USERNAME,
+  USER_PLAY,
   USER_ADD_ROLES,
   USER_REMOVE_ROLES,
 } from '../../constants/ActionTypes';
@@ -29,6 +30,14 @@ export default function reduceNotifications(state, { type, payload }) {
         _id: `userNameChanged-${payload.userID}-${payload.timestamp}`,
         user: payload.user,
         newUsername: payload.username,
+        timestamp: payload.timestamp,
+      }]);
+    case USER_PLAY:
+      return state.concat([{
+        type: 'userPlay',
+        _id: `userPlay-${payload.user._id}-${payload.timestamp}`,
+        user: payload.user,
+        song: payload.song,
         timestamp: payload.timestamp,
       }]);
     case USER_ADD_ROLES: // fall through

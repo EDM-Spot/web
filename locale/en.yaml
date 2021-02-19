@@ -39,6 +39,7 @@ uwave:
     userJoin: "{{username}} joined the room"
     userLeave: "{{username}} left the room"
     userNameChanged: "{{username}} changed their nickname to {{newUsername}}"
+    userPlay: "{{username}} is playing {{song}}"
     modSkip: "{{username}} skipped {{djName}}'s turn"
     modSkipReason: "{{username}} skipped {{djName}}'s turn: {{reason}}"
     selfSkip: "{{username}} skipped their turn"
@@ -189,6 +190,7 @@ uwave:
       userJoin: User Joins
       userLeave: User Leaves
       userNameChanged: User Changes Nickname
+      userPlay: User Plays
       skip: A Song Is Skipped
     profile:
       username:

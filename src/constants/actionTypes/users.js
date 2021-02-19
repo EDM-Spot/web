@@ -2,6 +2,7 @@ export const LOAD_ONLINE_USERS = 'users/LOAD';
 export const USER_JOIN = 'users/JOIN';
 export const USER_LEAVE = 'users/LEAVE';
 export const CHANGE_USERNAME = 'users/CHANGE_USERNAME';
+export const USER_PLAY = 'users/PLAY';
 export const USER_ADD_ROLES = 'users/ADD_ROLES';
 export const USER_REMOVE_ROLES = 'users/REMOVE_ROLES';
 

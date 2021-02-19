@@ -24,6 +24,7 @@ import { cyclePlaylist } from '../actions/PlaylistActionCreators';
 import {
   join as userJoin,
   leave as userLeave,
+  play as userPlay,
   changeUsername,
   addUserRoles,
   removeUserRoles,
@@ -122,6 +123,9 @@ const actions = {
   },
   leave(userID) {
     return userLeave(userID);
+  },
+  play({ user, song }) {
+    return userPlay(user, song);
   },
   nameChange({ userID, username }) {
     return changeUsername(userID, username);

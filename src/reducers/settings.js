@@ -25,6 +25,7 @@ const initialState = {
     userJoin: true,
     userLeave: true,
     userNameChanged: true,
+    userPlay: true,
     skip: true,
   },
 };

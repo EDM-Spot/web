@@ -32,6 +32,7 @@ const filteredMessagesSelector = createSelector(
     if (message.type === 'userJoin') return notificationSettings.userJoin;
     if (message.type === 'userLeave') return notificationSettings.userLeave;
     if (message.type === 'userNameChanged') return notificationSettings.userNameChanged;
+    if (message.type === 'userPlay') return notificationSettings.userPlay;
     if (message.type === 'skip') return notificationSettings.skip;
     return true;
   }),

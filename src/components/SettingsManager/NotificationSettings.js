@@ -21,6 +21,7 @@ function NotificationSettings({ settings, onSettingChange }) {
   const onToggleUserJoin = useToggleSetting('notifications.userJoin');
   const onToggleUserLeave = useToggleSetting('notifications.userLeave');
   const onToggleUserNameChanged = useToggleSetting('notifications.userNameChanged');
+  const onToggleUserPlay = useToggleSetting('notifications.userPlay');
   const onToggleSkip = useToggleSetting('notifications.skip');
 
   return (
@@ -47,6 +48,13 @@ function NotificationSettings({ settings, onSettingChange }) {
             color="primary"
             checked={settings.notifications.userNameChanged}
             onChange={onToggleUserNameChanged}
+          />
+        </SettingControl>
+        <SettingControl label={t('settings.notifications.userPlay')}>
+          <Switch
+            color="primary"
+            checked={settings.notifications.userPlay}
+            onChange={onToggleUserPlay}
           />
         </SettingControl>
         <SettingControl label={t('settings.notifications.skip')}>
