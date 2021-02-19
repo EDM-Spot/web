@@ -14,7 +14,7 @@ const EmojiSuggestion = ({
     <ListItemAvatar>
       <span
         className="EmojiSuggestion-image"
-        style={{ backgroundImage: `url(${emoji.image})` }}
+        style={{ backgroundImage: `url(/assets/emoji/${emoji.image})` }}
       />
     </ListItemAvatar>
     <ListItemText primary={shortcode(emoji)} />
