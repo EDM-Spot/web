@@ -27,6 +27,7 @@ function Profile({ className, user, onChangeUsername }) {
         <p className="SettingsPanelProfile-date">
           {dateTimeFormatter.format(new Date(user.createdAt))}
         </p>
+        Level: {user.level}
       </div>
     </div>
   );
