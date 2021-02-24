@@ -1,10 +1,14 @@
-import { put } from './RequestActionCreators';
+import { get, put } from './RequestActionCreators';
 import {
   LOAD_ONLINE_USERS,
   USER_JOIN,
   USER_LEAVE,
   USER_PLAY,
   CHANGE_USERNAME,
+
+  USER_GAIN,
+  USER_LEVELUP,
+
   USER_ADD_ROLES,
   USER_REMOVE_ROLES,
 
@@ -79,6 +83,48 @@ export function changeUsername(userID, username) {
         timestamp: Date.now(),
       },
     });
+  };
+}
+
+export function gain(userID, exp, points) {
+  return (dispatch, getState) => {
+    const user = usersSelector(getState())[userID];
+    return dispatch({
+      type: USER_GAIN,
+      payload: {
+        user,
+        userID,
+        exp,
+        points,
+      },
+    });
+  };
+}
+
+
+export function levelup(userID, level) {
+  return (dispatch, getState) => {
+    const user = usersSelector(getState())[userID];
+    return dispatch({
+      type: USER_LEVELUP,
+      payload: {
+        user,
+        userID,
+        level,
+      },
+    });
+  };
+}
+
+export function startLeveling() {
+  return (dispatch, getState) => {
+    const user = currentUserSelector(getState());
+
+    if (!user) {
+      return null;
+    }
+
+    return dispatch(get(`/users/${user._id}/dispense`));
   };
 }
 

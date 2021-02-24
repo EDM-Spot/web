@@ -7,6 +7,8 @@ import {
   USER_JOIN,
   USER_LEAVE,
   CHANGE_USERNAME,
+  USER_GAIN,
+  USER_LEVELUP,
   USER_ADD_ROLES,
   USER_REMOVE_ROLES,
   RECEIVE_GUEST_COUNT,
@@ -37,11 +39,11 @@ function usersReducer(state = {}, action = {}) {
   switch (type) {
     case INIT_STATE: // fall through
     case LOAD_ONLINE_USERS:
-    // this is merged in instead of replacing the state, because sometimes the
-    // JOIN event from the current user comes in before the LOAD event, and then
-    // the current user is sometimes excluded from the state. it looks like this
-    // approach could cause problems, too, though.
-    // TODO maybe replace state instead anyway and merge in the current user?
+      // this is merged in instead of replacing the state, because sometimes the
+      // JOIN event from the current user comes in before the LOAD event, and then
+      // the current user is sometimes excluded from the state. it looks like this
+      // approach could cause problems, too, though.
+      // TODO maybe replace state instead anyway and merge in the current user?
       return {
         ...state,
         ...indexBy(payload.users, '_id'),
@@ -67,6 +69,17 @@ function usersReducer(state = {}, action = {}) {
       return updateUser(state, payload.userID, (user) => ({
         ...user,
         roles: user.roles.filter((role) => !payload.roles.includes(role)),
+      }));
+    case USER_GAIN:
+      return updateUser(state, payload.userID, (user) => ({
+        ...user,
+        exp: payload.exp,
+        points: payload.points,
+      }));
+    case USER_LEVELUP:
+      return updateUser(state, payload.userID, (user) => ({
+        ...user,
+        level: payload.level,
       }));
     default:
       return state;
