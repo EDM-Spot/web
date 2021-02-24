@@ -16,6 +16,18 @@
   vertical-align: top;
 }
 
+.SettingsPanelProfile-levelblock {
+  display: inline-block;
+  padding-inline-start: 20px;
+  vertical-align: top;
+}
+
+.SettingsPanelProfile-pointsblock {
+  display: inline-block;
+  padding-inline-start: 20px;
+  vertical-align: top;
+}
+
 .SettingsPanelProfile-date {
   line-height: 1.5;
   color: #aaa;
