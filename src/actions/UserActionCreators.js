@@ -1,4 +1,4 @@
-import { get, put } from './RequestActionCreators';
+import { put } from './RequestActionCreators';
 import {
   LOAD_ONLINE_USERS,
   USER_JOIN,
@@ -113,18 +113,6 @@ export function levelup(userID, level) {
         level,
       },
     });
-  };
-}
-
-export function startLeveling() {
-  return (dispatch, getState) => {
-    const user = currentUserSelector(getState());
-
-    if (!user) {
-      return null;
-    }
-
-    return dispatch(get(`/users/${user._id}/dispense`));
   };
 }
 
