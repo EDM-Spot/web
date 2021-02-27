@@ -24,8 +24,11 @@ function UserCard({ className, user }) {
         avatar={<Avatar className="UserCard-avatar" user={user} />}
       />
       <CardContent className="UserCard-joinDate">
-        <Typography>
+        <Typography gutterBottom>
           Joined: {dateTimeFormatter.format(joinDate)}
+        </Typography>
+        <Typography>
+          Level: {user.level}
         </Typography>
       </CardContent>
       <CardActions className="UserCard-actions">

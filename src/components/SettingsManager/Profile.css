@@ -1,3 +1,7 @@
+.SettingsPanelProfile {
+  display: flex;
+}
+
 .SettingsPanelProfile-username {
   font-size: 120%;
   font-weight: normal;
@@ -11,6 +15,19 @@
 }
 
 .SettingsPanelProfile-textblock {
+  display: inline-block;
+  padding-inline-start: 20px;
+  vertical-align: top;
+  flex-grow: 1;
+}
+
+.SettingsPanelProfile-levelblock {
+  display: inline-block;
+  padding-inline-start: 20px;
+  vertical-align: top;
+}
+
+.SettingsPanelProfile-pointsblock {
   display: inline-block;
   padding-inline-start: 20px;
   vertical-align: top;

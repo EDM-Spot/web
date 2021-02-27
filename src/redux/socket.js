@@ -25,6 +25,8 @@ import {
   join as userJoin,
   leave as userLeave,
   play as userPlay,
+  gain as userGain,
+  levelup as userLevelup,
   changeUsername,
   addUserRoles,
   removeUserRoles,
@@ -126,6 +128,12 @@ const actions = {
   },
   play({ user, song }) {
     return userPlay(user, song);
+  },
+  gain({ userID, exp, points }) {
+    return userGain(userID, exp, points);
+  },
+  levelup({ userID, level }) {
+    return userLevelup(userID, level);
   },
   nameChange({ userID, username }) {
     return changeUsername(userID, username);
