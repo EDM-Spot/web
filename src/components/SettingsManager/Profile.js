@@ -63,6 +63,9 @@ function Profile({ className, user, onChangeUsername }) {
           {dateTimeFormatter.format(new Date(user.createdAt))}
         </p>
       </div>
+      <div className="SettingsPanelProfile-pointsblock">
+        <strong>Points: {currentUser.points}</strong>
+      </div>
       <div className="SettingsPanelProfile-levelblock">
         <div style={{ width: '40%', float: 'right' }}>
           <CircularProgressbarWithChildren
@@ -81,9 +84,6 @@ function Profile({ className, user, onChangeUsername }) {
             </div>
           </CircularProgressbarWithChildren>
         </div>
-      </div>
-      <div className="SettingsPanelProfile-pointsblock">
-        <strong>Points: {currentUser.points}</strong>
       </div>
     </div>
   );
