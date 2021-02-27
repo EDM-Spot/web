@@ -20,6 +20,7 @@ import { setPlaylists, loadPlaylist } from './PlaylistActionCreators';
 import { syncTimestamps } from './TickerActionCreators';
 import { closeLoginDialog } from './DialogActionCreators';
 import { tokenSelector } from '../selectors/userSelectors';
+import { startLeveling } from './UserActionCreators';
 
 export function socketConnect() {
   return { type: SOCKET_CONNECT };
@@ -79,6 +80,7 @@ export function initState() {
       dispatch(syncTimestamps(beforeTime, state.time));
       dispatch(loadedState(state));
       dispatch(loadHistory());
+      dispatch(startLeveling());
       return state;
     },
   });
