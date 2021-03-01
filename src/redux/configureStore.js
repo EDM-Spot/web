@@ -3,6 +3,7 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import timerMiddleware from 'redux-timer';
 import { batchedSubscribe } from 'redux-batched-subscribe';
 import nanoraf from 'nanoraf';
 import raf from 'raf';
@@ -31,6 +32,7 @@ export default function createUwaveStore(initialState = {}, options = {}) {
     // send HTTP requests. Those might dispatch an action object once the
     // request finishes.
     thunk,
+    timerMiddleware,
     // This allows dispatching REQUEST_START actions to the store, which will
     // then be executed and handled as HTTP requests by the middleware.
     webApiRequest(),

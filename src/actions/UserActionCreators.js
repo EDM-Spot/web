@@ -1,3 +1,4 @@
+import { START_TIMER } from 'redux-timer';
 import { get, put } from './RequestActionCreators';
 import {
   LOAD_ONLINE_USERS,
@@ -101,7 +102,6 @@ export function gain(userID, exp, points) {
   };
 }
 
-
 export function levelup(userID, level) {
   return (dispatch, getState) => {
     const user = usersSelector(getState())[userID];
@@ -118,13 +118,23 @@ export function levelup(userID, level) {
 
 export function startLeveling() {
   return (dispatch, getState) => {
-    const user = currentUserSelector(getState());
+    return dispatch({
+      type: START_TIMER,
+      payload: {
+        name: 'levelingTimer',
+        action: async () => {
+          const user = currentUserSelector(getState());
 
-    if (!user) {
-      return null;
-    }
+          if (!user) {
+            return null;
+          }
 
-    return dispatch(get(`/users/${user._id}/dispense`));
+          return dispatch(get(`/users/${user._id}/dispense`));
+        },
+        interval: 300000,
+        runImmediately: false,
+      },
+    });
   };
 }
 
