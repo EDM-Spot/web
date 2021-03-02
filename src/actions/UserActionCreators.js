@@ -17,6 +17,9 @@ import {
 
   DO_CHANGE_USERNAME_START,
   DO_CHANGE_USERNAME_COMPLETE,
+
+  DO_CHANGE_DISCORDID_START,
+  DO_CHANGE_DISCORDID_COMPLETE
 } from '../constants/ActionTypes';
 import {
   currentUserSelector,
@@ -188,5 +191,28 @@ export function removeUserRoles(userID, roles) {
         timestamp: Date.now(),
       },
     });
+  };
+}
+
+export function doChangeDiscordID(discordId) {
+  return (dispatch, getState) => {
+    const user = currentUserSelector(getState());
+
+    return dispatch(put(`/users/${user._id}/discordId`, { discordId }, {
+      onStart: () => ({
+        type: DO_CHANGE_DISCORDID_START,
+        payload: { discordId },
+      }),
+      onComplete: ({ data }) => ({
+        type: DO_CHANGE_DISCORDID_COMPLETE,
+        payload: { DiscordId: data.discordId },
+      }),
+      onError: (error) => ({
+        type: DO_CHANGE_DISCORDID_COMPLETE,
+        error: true,
+        payload: error,
+        meta: { discordId },
+      }),
+    }));
   };
 }
