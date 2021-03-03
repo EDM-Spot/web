@@ -152,6 +152,8 @@ uwave:
         nsfw: NSFW
         duration: Too long
         downvotes: Too many mehs
+        bot: Skipped using !skip
+        blackwords: Blackwords
         other: Other
 
   history:
