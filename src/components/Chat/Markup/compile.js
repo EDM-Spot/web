@@ -5,6 +5,7 @@ import Italic from './Italic';
 import StrikeThrough from './StrikeThrough';
 import Mention from './Mention';
 import GroupMention from './GroupMention';
+import Img from './Img';
 import Link from './Link';
 import Emoji from './Emoji';
 
@@ -14,10 +15,14 @@ export default function compile(tree, opts = {}) {
     emojiImages = {},
   } = opts;
 
+  const imgRx = new RegExp('^([a-z-_0-9/:.]*.(jpg|jpeg|png|gif))', 'i');
+
   return tree.map((node, i) => {
     if (typeof node === 'string') {
       return node;
     }
+
+    const match = imgRx.exec(node.href);
 
     /* eslint-disable react/no-array-index-key */
     switch (node.type) {
@@ -26,6 +31,9 @@ export default function compile(tree, opts = {}) {
           ? <Mention key={i} user={node.user} />
           : <GroupMention key={i} group={node.mention} users={node.group} />;
       case 'link':
+        if (match) {
+          return <Img key={i} href={node.href} />;
+        }
         return <Link key={i} href={node.href}>{node.text}</Link>;
       case 'emoji':
         if (availableEmoji.includes(node.name) && node.name in emojiImages) {
