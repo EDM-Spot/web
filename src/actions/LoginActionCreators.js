@@ -114,6 +114,14 @@ export function login({ email, password }) {
   });
 }
 
+export function registerCompleteError(error) {
+  return {
+    type: REGISTER_COMPLETE,
+    error: true,
+    payload: error,
+  };
+}
+
 export function register({
   email, username, password, grecaptcha,
 }) {
@@ -129,11 +137,7 @@ export function register({
       });
       dispatch(login({ email, password }));
     },
-    onError: (error) => ({
-      type: REGISTER_COMPLETE,
-      error: true,
-      payload: error,
-    }),
+    onError: registerCompleteError,
   });
 }
 
