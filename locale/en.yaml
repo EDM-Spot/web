@@ -230,6 +230,7 @@ uwave:
     users:
       user: User
       joinedAt: Created
+      lastSeenAt: Last Seen
       email: E-Mail
       roles: Roles
     bans:

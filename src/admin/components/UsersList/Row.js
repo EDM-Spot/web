@@ -32,6 +32,15 @@ JoinDate.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
 };
 
+function SeenDate({ date }) {
+  const { dateFormatter } = useIntl();
+  return dateFormatter.format(date);
+}
+
+SeenDate.propTypes = {
+  date: PropTypes.instanceOf(Date).isRequired,
+};
+
 const actionsStyle = {
   width: 48,
   paddingLeft: 0,
@@ -75,6 +84,9 @@ export default class UserRow extends React.Component {
         </TableCell>
         <TableCell>
           <JoinDate date={new Date(user.createdAt)} />
+        </TableCell>
+        <TableCell>
+          <SeenDate date={new Date(user.lastSeenAt)} />
         </TableCell>
         <TableCell>Email</TableCell>
         <TableCell>

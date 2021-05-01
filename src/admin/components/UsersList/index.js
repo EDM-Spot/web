@@ -30,6 +30,7 @@ function UsersList({
             <TableCell className="AdminUserRow-avatar" />
             <TableCell>{t('admin.users.user')}</TableCell>
             <TableCell>{t('admin.users.joinedAt')}</TableCell>
+            <TableCell>{t('admin.users.lastSeenAt')}</TableCell>
             <TableCell>{t('admin.users.email')}</TableCell>
             <TableCell>{t('admin.users.roles')}</TableCell>
             <TableCell />

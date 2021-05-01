@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import baseSelector from './baseSelector';
 
-export const pageSizeSelector = () => 25;
+export const pageSizeSelector = () => 150;
 export const pageSelector = createSelector(
   baseSelector,
   (base) => base.users.currentPage,
