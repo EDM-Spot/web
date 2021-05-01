@@ -86,7 +86,7 @@ export default class UserRow extends React.Component {
           <JoinDate date={new Date(user.createdAt)} />
         </TableCell>
         <TableCell>
-          <SeenDate date={new Date(user.lastSeenAt)} />
+          <SeenDate date={new Date(user.updatedAt)} />
         </TableCell>
         <TableCell>Email</TableCell>
         <TableCell>
