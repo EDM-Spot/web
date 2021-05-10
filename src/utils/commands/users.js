@@ -20,7 +20,7 @@ register(
   'discord',
   'Link Discord. Syntax: "/discord 111111111111111111"',
   {
-    action: (discordId) => (dispatch, getState) => {
+    action: (discordId) => (dispatch) => {
       if (!discordId) {
         return dispatch(log('Provide a Discord ID.'));
       }

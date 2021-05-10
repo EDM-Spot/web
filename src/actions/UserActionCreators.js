@@ -19,7 +19,7 @@ import {
   DO_CHANGE_USERNAME_COMPLETE,
 
   DO_CHANGE_DISCORDID_START,
-  DO_CHANGE_DISCORDID_COMPLETE
+  DO_CHANGE_DISCORDID_COMPLETE,
 } from '../constants/ActionTypes';
 import {
   currentUserSelector,
