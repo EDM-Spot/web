@@ -67,7 +67,7 @@ function Profile({ className, user, onChangeUsername }) {
         <strong>Points: {currentUser.points}</strong>
       </div>
       <div className="SettingsPanelProfile-levelblock">
-        <div style={{ width: '40%', float: 'right' }}>
+        <div style={{ width: '45%', float: 'right' }}>
           <CircularProgressbarWithChildren
             value={currentUser.exp}
             minValue={expPerLevel[currentUser.level]}
