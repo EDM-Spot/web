@@ -9,14 +9,15 @@ function createManifest({ title }) {
   return {
     name: title,
     short_name: title,
-    start_url: '.',
+    start_url: '/',
+    scope: '/',
     theme_color: theme.palette.main,
     background_color: '#151515',
     display: 'standalone',
     icons: [{
       type: 'image/png',
-      src: '/icon-white.png',
-      sizes: '144x144',
+      src: '/logo-square.png',
+      sizes: '512x512',
     }],
   };
 }

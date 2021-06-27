@@ -324,7 +324,8 @@ function getConfig(env, {
         new CopyPlugin({
           patterns: [
             { from: '../assets/favicon.ico', to: 'favicon.ico' },
-            { from: '../assets/icon-white.png', to: 'icon-white.png' },
+            { from: '../assets/img/logo-square.png', to: 'logo-square.png' },
+            { from: 'service-worker.js', to: 'service-worker.js' },
           ],
         }),
         new HtmlPlugin({
