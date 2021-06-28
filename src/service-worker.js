@@ -58,6 +58,10 @@ self.addEventListener('fetch', (event) => {
           return response;
         });
       });
+    }).catch((err) => {
+      // Fallback to cache
+      console.log(err);
+      return caches.match(event.request);
     }),
   );
 });
